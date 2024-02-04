@@ -1,0 +1,14 @@
+name: Generate Report
+
+on:
+  push:
+    branches: [ "actions/**" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run Python script
+      run: |
+        python main.py
