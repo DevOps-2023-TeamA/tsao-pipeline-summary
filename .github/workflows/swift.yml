@@ -1,0 +1,21 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Swift on Linux
+      uses: sersoft-gmbh/swifty-linux-action@v3.0.0
+    - name: Run Swift job
+      run: |
+        swift run
