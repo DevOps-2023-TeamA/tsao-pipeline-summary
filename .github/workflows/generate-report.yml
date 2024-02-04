@@ -1,6 +1,8 @@
 name: Generate Report
 
 on:
+  schedule:
+    - cron: '0 18 * * *' # run at 2am singapore time, change to '0 0 * * *' to run at 8am singapore time later
   push:
     branches: [ "actions/**" ]
 
