@@ -9,13 +9,9 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Install Swift on Linux
-      uses: sersoft-gmbh/swifty-linux-action@v3.0.0
-      with:
-        release-version: 5.9.2
     - name: Run Swift job
       run: |
         swift run
