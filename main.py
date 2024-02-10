@@ -61,7 +61,19 @@ def send_message(report):
             print("Error details:", response.text)
         sys.exit(1)
 
-send_message("# Daily Report\n" + generate_report("tsao-frontend-svc"))
-send_message(generate_report("tsao-backend-svc"))
-send_message(generate_report("tsao-db"))
-send_message(generate_report("tsao-tests"))
+reports = [
+    generate_report("tsao-frontend-svc"),
+    generate_report("tsao-backend-svc"),
+    generate_report("tsao-db"),
+    generate_report("tsao-tests")
+]
+filtered_reports = [element for element in reports if element is not None]
+
+for i in range(0, len(filtered_reports)):
+    if i == 0:
+        send_message("# Daily Report\n" + i)
+    else:
+        send_message(i)
+
+if len(filtered_reports) == 0:
+    send_message("# Daily Report\nNo progress was made.")
