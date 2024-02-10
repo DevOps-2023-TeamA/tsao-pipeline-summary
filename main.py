@@ -35,7 +35,7 @@ def generate_report(repo):
         
     if tmp_report == "": return
     
-    tmp_report = f"## [{repo}](https://github.com/DevOps-2023-TeamA/<{repo}>)\n{tmp_report}\n"
+    tmp_report = f"## [{repo}](<https://github.com/DevOps-2023-TeamA/{repo}>)\n{tmp_report}\n"
     return tmp_report
 
 def send_message(report):
