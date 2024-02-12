@@ -71,9 +71,9 @@ filtered_reports = [element for element in reports if element is not None]
 
 for i in range(0, len(filtered_reports)):
     if i == 0:
-        send_message("# Daily Report\n" + i)
+        send_message("# Daily Report\n" + filtered_reports[i])
     else:
-        send_message(i)
+        send_message(filtered_reports[i])
 
 if len(filtered_reports) == 0:
     send_message("# Daily Report\nNo progress was made.")
